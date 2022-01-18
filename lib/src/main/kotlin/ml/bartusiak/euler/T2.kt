@@ -9,8 +9,6 @@ class T2 {
         }
     }
 
-
-
     fun solve(): Long {
         return generateSequence(Pair(1L,2L)){
             Pair(it.second, it.first+it.second)
