@@ -14,7 +14,11 @@ class T8 {
     fun Long.square(): Long = this * this
 
     fun solve(): Long {
-        return T8::class.java.getResource("/data/T8.txt").readText().split("", "\n").filter{it.isNotEmpty()}.filter{it != "\n"}.map { it.toLong() }.windowed(13).maxOf { it.reduce{a, b -> a*b} }
+        return T8::class.java.getResource("/data/T8.txt")
+            .readText().split("", "\n").
+            filter{it.isNotEmpty()}
+                .filter{it != "\n"}.
+            map { it.toLong() }.windowed(13).maxOf { it.reduce{a, b -> a*b} }
     }
 
 
